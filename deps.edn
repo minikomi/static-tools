@@ -1,0 +1,30 @@
+{:paths ["src"]
+ :deps  {org.clojure/clojure        {:mvn/version "RELEASE"}
+         ;; config
+         yogthos/config             {:mvn/version "1.1.2"}
+         ;; components
+         mount                      {:mvn/version "0.1.16"}
+         ;; util
+         me.raynes/fs               {:mvn/version "1.4.6"}
+         com.taoensso/timbre        {:mvn/version "4.10.0"}
+         ;; pages
+         hiccup                     {:mvn/version "1.0.5"}
+         ;; css
+         garden                     {:mvn/version "1.3.9"}
+         ;;figwheel
+         com.bhauman/figwheel-main  {:mvn/version "0.2.3"}
+         ;; server
+         ring                       {:mvn/version "1.7.1"
+                                     :exclusions  [org.eclipse.jetty.websocket/websocket-server
+                                                   org.eclipse.jetty.websocket/websocket-servlet]}
+         ring-middleware-format     {:mvn/version "0.7.4"}
+         ring/ring-defaults         {:mvn/version "0.3.2"}
+         nrepl                      {:mvn/version "0.7.0-alpha1"}
+         metosin/ring-http-response {:mvn/version "0.9.1"}
+         http-kit                   {:mvn/version "2.3.0"}
+         ;; nrepl
+         cider/cider-nrepl          {:mvn/version "0.22.0-beta6"}
+         cider/piggieback           {:mvn/version "0.4.1"}
+         refactor-nrepl             {:mvn/version "2.5.0-SNAPSHOT"}
+         ;; watcher / builder
+         co.poyo/watch-and-run      {:local/root "../watch-and-run"}}}
