@@ -11,5 +11,6 @@
 (defn parse [args]
   (if (empty? args) {:css true
                      :js true
+                     :static true
                      :pages true}
       (:options (parse-opts args cli-options))))

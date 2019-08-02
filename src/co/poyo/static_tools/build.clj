@@ -18,13 +18,9 @@
   (let [{:keys [css js pages static] :as opts} (opt/parse args)]
     (println opts)
     (when css
-      (doseq [{:keys [build-fn]}
-              (garden/get-css-jobs)]
-        (build-fn)))
+      (file-map/run-all-jobs (garden/get-css-jobs)))
     (when pages
-      (doseq [{:keys [build-fn]}
-              (pages/get-pages-jobs)]
-        (build-fn)))
+      (file-map/run-all-jobs (pages/get-pages-jobs)))
     (when js
       (doseq [build (get config/env :cljs-builds [:prod])]
         (figwheel/start {:mode :build-once :open-url false} build))
