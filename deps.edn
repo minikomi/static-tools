@@ -24,8 +24,15 @@
          metosin/ring-http-response {:mvn/version "0.9.1"}
          http-kit                   {:mvn/version "2.3.0"}
          ;; nrepl
-         cider/cider-nrepl          {:mvn/version "0.22.0-beta6"}
+         cider/cider-nrepl          {:mvn/version "0.22.0-beta9"}
          cider/piggieback           {:mvn/version "0.4.1"}
          refactor-nrepl             {:mvn/version "2.5.0-SNAPSHOT"}
          ;; watcher / builder
-         co.poyo/watch-and-run      {:local/root "../watch-and-run"}}}
+         co.poyo/watch-and-run      {:git/url "https://github.com/minikomi/watch-and-run"
+                                     :sha "b467e0aa4ea55dbe6ab97b02281bd6bf8ce91b51"}}
+ :aliases {:pack {:extra-deps {pack/pack.alpha {:git/url "https://github.com/juxt/pack.alpha.git"
+                                                :sha "d9023b24c3d589ba6ebc66c5a25c0826ed28ead5"}}
+                  :main-opts ["-m"]}
+           :deploy {:extra-deps {deps-deploy {:mvn/version "RELEASE"}}
+                    :main-opts ["-m" "deps-deploy.deps-deploy" "deploy" "static-tools.jar"]}}
+ }
