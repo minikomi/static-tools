@@ -8,7 +8,8 @@
   figwheel
   "starts figwheel for each build listed in :cljs-builds"
   :start
-  (doseq [build (get config/env :cljs-builds [:dev])]
-    (figwheel/start {:mode :serve :open-url false} build))
+  (apply figwheel/start
+         {:mode :serve :open-url false}
+         (get config/env :cljs-builds [:dev]))
   :stop
   (figwheel/stop-all))
